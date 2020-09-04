@@ -1,0 +1,21 @@
+CREATE TABLE users(
+	id serial PRIMARY KEY,
+	name VARCHAR (50) NOT NULL,
+	age INTEGER,
+	filmlist TEXT[]
+);
+
+INSERT INTO users (id, name, age, filmlist) VALUES (1, 'John Smith', 40, 'http://127.0.0.1:8080/rest-1.0-SNAPSHOT/api/films/2', 'http://127.0.0.1:8080/rest-example-1.0-SNAPSHOT/api/films/4');
+INSERT INTO users (id, name, age, filmlist) VALUES (2, 'Brian Smith', 21, 'http://127.0.0.1:8080/rest-1.0-SNAPSHOT/api/films/1');
+INSERT INTO users (id, name, age, filmlist) VALUES (3, 'Karen Anderson', 25, 'http://127.0.0.1:8080/rest-1.0-SNAPSHOT/api/films/3');
+
+CREATE TABLE films(
+	id serial PRIMARY KEY,
+	title VARCHAR (50) NOT NULL,
+	uri TEXT NOT NULL
+);
+
+INSERT INTO films (id, title, uri) VALUES (1, 'Mulan', 'http://127.0.0.1:8080/rest-1.0-SNAPSHOT/api/films/1');
+INSERT INTO films (id, title, uri) VALUES (2, 'Pocahontas', 'http://127.0.0.1:8080/rest-1.0-SNAPSHOT/api/films/2');
+INSERT INTO films (id, title, uri) VALUES (3, 'Tarzan', 'http://127.0.0.1:8080/rest-1.0-SNAPSHOT/api/films/3');
+INSERT INTO films (id, title, uri) VALUES (4, 'Lion King', 'http://127.0.0.1:8080/rest-1.0-SNAPSHOT/api/films/4');
